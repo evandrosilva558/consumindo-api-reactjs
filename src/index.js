@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ScreenHome } from './routes/routehome';
+import { ScreenFruits } from './routes/routefruits';
+import { ScreenDetails } from './routes/routedetails';
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/routedetails" element={<ScreenDetails />}/>
+      <Route path="/routehome" element={<ScreenHome/>}/>
+      <Route path="/routefruits" element={<ScreenFruits />}/>
+    </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
